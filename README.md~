@@ -1,5 +1,5 @@
 # blog-with-in-place-comments
-A blogging platform with in place comments, Ehcache has been used as an intermediary between database and dao layers.
+A blogging platform with in place comments
 I assume that the JSON input to the API will have \n\n as a double newline as a bifurcation between two paragraphs.
 Let's say you deployed the application on localhost on port 8080.
 

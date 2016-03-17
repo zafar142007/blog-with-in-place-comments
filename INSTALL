@@ -1,0 +1,40 @@
+1. PLease run the following commands on database server MySQL 5.5.
+
+CREATE DATABASE blogWithComments;
+USE blogWithComments;
+CREATE TABLE `detailed_blog_paragraphs` (
+  `blogId` varchar(10) NOT NULL,
+  `paragraphId` varchar(10) NOT NULL,
+  `paragraph` text,
+  `time_last_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`blogId`,`paragraphId`)
+);
+
+CREATE TABLE `detailed_blog` (
+  `id` varchar(10) NOT NULL,
+  `paragraphId` varchar(10) NOT NULL DEFAULT '',
+  `comment_id` varchar(10) NOT NULL DEFAULT '',
+  `comment` text,
+  `time_last_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`,`paragraphId`,`comment_id`),
+  FOREIGN KEY (`id`,`paragraphId`) REFERENCES detailed_blog_paragraphs(`blogId`,`paragraphId`)
+);
+CREATE TABLE `blog` (
+  `id` varchar(10) NOT NULL,
+  `title` text,
+  `plainText` text NOT NULL,
+  `time_last_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+);
+
+2. Only if your MySQL database is not running on localhost, change your database address. Let's say your database is running on IP address a.b.c.d
+Inside the file BlogWithComments/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml change the value "jdbc:mysql://localhost:3306/blogWithComments" to "jdbc:mysql://a.b.c.d:3306/blogWithComments".
+
+3. Run inside application folder (contianing pom.xml)
+mvn clean install
+
+The target folder shall now have a file blog-with-comments.war.
+Please copy this file into the webapps folder of Tomcat 8.
+
+4. Start the server by running the startup.sh file in bin folder of tomcat.
+
