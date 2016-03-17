@@ -5,7 +5,7 @@ Let's say you deployed the application on localhost on port 8080.
 
 APIs
 
-1. Add a blog post
++ Add a blog post
 
 URL: http://localhost:8080/blog-with-comments/blog/add
 
@@ -25,7 +25,7 @@ Sample Response:
   }
 }
 
-2. View all blog posts in paginated view of 5 blogs per API call
++ View all blog posts in paginated view of 5 blogs per API call
 
 The first page will be returned if called without any page number in the URL.
 
@@ -70,7 +70,7 @@ Sample Response:
   }
 }
 
-3. View detailed view of a blog post (with comments).
++ View detailed view of a blog post (with comments).
 
 The URL expects a blog id.
 
@@ -95,7 +95,7 @@ Sample Response:
   }
 }
 
-4. Add a comment to a paragraph in a blog.
++ Add a comment to a paragraph in a blog.
 
 The URL expects a blog id and a paragraph id. This paragraph id is returned by API #3. This blog Id is returned by API #1 and #2.
 
