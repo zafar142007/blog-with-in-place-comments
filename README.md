@@ -25,7 +25,7 @@ Sample Response:
   }
 }
 
-+ View all blog posts in paginated view of 5 blogs per API call
++ View all blog posts in paginated view of 5 blogs per API call (this limit is configurable in the property file app.properties)
 
 The first page will be returned if called without any page number in the URL.
 
