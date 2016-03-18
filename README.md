@@ -30,6 +30,7 @@ Sample Response:
 The first page will be returned if called without any page number in the URL.
 
 URL: http://localhost:8080/blog-with-comments/blog/all
+
      http://localhost:8080/blog-with-comments/blog/all/2
 
 HTTP METHOD: GET
