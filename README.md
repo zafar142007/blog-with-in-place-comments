@@ -3,11 +3,13 @@ A blogging platform with in place comments, Ehcache has been used as an intermed
 I assume that the JSON input to the API will have \n\n as a double newline as a bifurcation between two paragraphs.
 Let's say you deployed the application on localhost on port 8080.
 
-APIs
+##APIs
 
 ### Add a blog post
 
-URL: http://localhost:8080/blog-with-comments/blog/add
+URL: 
+
+      http://localhost:8080/blog-with-comments/blog/add
 
 HTTP METHOD: POST
 
@@ -29,9 +31,10 @@ Sample Response:
 
 The first page will be returned if called without any page number in the URL.
 
-URL: http://localhost:8080/blog-with-comments/blog/all
+URL: 
 
-     http://localhost:8080/blog-with-comments/blog/all/2
+    http://localhost:8080/blog-with-comments/blog/all
+    http://localhost:8080/blog-with-comments/blog/all/2
 
 HTTP METHOD: GET
 
@@ -75,7 +78,9 @@ Sample Response:
 
 The URL expects a blog id.
 
-URL: http://localhost:8080/blog-with-comments/blog/87394575
+URL: 
+
+      http://localhost:8080/blog-with-comments/blog/87394575
 
 HTTP METHOD: GET
 
@@ -100,7 +105,9 @@ Sample Response:
 
 The URL expects a blog id and a paragraph id. This paragraph id is returned by API #3. This blog Id is returned by API #1 and #2.
 
-URL: http://localhost:8080/blog-with-comments/blog/87394575/paragraph/0
+URL:
+
+    http://localhost:8080/blog-with-comments/blog/87394575/paragraph/0
 
 HTTP METHOD: POST
 
